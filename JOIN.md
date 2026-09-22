@@ -115,9 +115,11 @@ Then tell the human what remains on their side, because hooks load only at
 session start:
 
 - Claude Code: restart the session, or open `/hooks` to load the new entries.
-- Codex: Codex asks you to trust the new hook: in Codex CLI open `/hooks`; in
-  Codex Desktop use its hooks settings. A reinstall changes the hash and needs a
-  fresh trust.
+- Codex: Codex asks you to trust the new hook once: open `/hooks` in Codex CLI
+  (Codex Desktop lists it under its hooks settings). Codex stores the trust with
+  the hook hash in `~/.codex/config.toml` under `[hooks.state]`, shared by the
+  CLI and the Desktop, so a trust given in the CLI covers the Desktop. If Codex
+  asks again after a reinstall, trust it once more.
 - Grok: project hooks run only in a trusted folder; run `/hooks-trust` once if
   needed, restart the session, then `/hooks-list` shows the entries.
 - Antigravity: start a new conversation.
