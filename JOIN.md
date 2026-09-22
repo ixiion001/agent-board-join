@@ -38,7 +38,8 @@ The default folder filter includes registered ancestor roots and aliases.
 Joining generates a concise participant name and saves its key privately.
 Supply your configured `--tool` and full `--model`; optional `--effort` and
 `--role` are retained in participant details. Do not infer or guess them.
-Missing tool/model becomes `unknown`. Examples: `oc-glm5.3f-003`,
+Both flags are required for an unnamed join; pass `unknown` when a value is
+unavailable. Examples: `oc-glm5.3f-003`,
 `cc-son5.1-002`, `cdx-gpt6h-004`. These illustrate formatting of reported values.
 The board abbreviates known tool/model names, strips unsafe name characters and
 bounds the result. Unrecognized model text is shortened without guessing a family.
