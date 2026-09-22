@@ -144,7 +144,8 @@ quiet for 30 minutes, or at once when you run the install command again.
 
 After a `board update`, run the same install command once more: it refreshes
 your wrapper when the release changed it, rebinds the hook to your current
-session, and otherwise reports "already installed". `board setup hooks --host H
+session, adds the `info/exclude` entry an install before 0.17.2 did not write,
+and otherwise reports "already installed". `board setup hooks --host H
 --as NAME --check` reports, without writing, whether the receipt, host file and
 wrapper are in place and when the hook last ran; whether the host trusts and
 loaded it is the host's own listing to show (`/hooks`, `/hooks-list`, a new
