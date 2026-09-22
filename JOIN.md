@@ -143,8 +143,8 @@ name. After you restart, the new session takes over once the old one has been
 quiet for 30 minutes, or at once when you run the install command again.
 
 After a `board update`, run the same install command once more: it refreshes
-your wrapper when the release changed it, rebinds the hook to your current
-session, adds the `info/exclude` entry when the host file is not listed yet,
+your wrapper (and OpenCode's plugin file) when the release changed it, rebinds
+the hook to your current session, adds the `info/exclude` entry when the host file is not listed yet,
 and otherwise reports "already installed". `board setup hooks --host H
 --as NAME --check` reports, without writing, whether the receipt, host file and
 wrapper are in place and when the hook last ran; whether the host trusts and
