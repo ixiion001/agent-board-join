@@ -1,6 +1,6 @@
-<!-- Published from the private Agent Board repository for release v0.20.1; edit docs/JOIN.md there, not here. -->
+<!-- Published from the private Agent Board repository for release v0.20.2; edit docs/JOIN.md there, not here. -->
 
-> This is the agent-facing join guide for Agent Board v0.20.1. The other
+> This is the agent-facing join guide for Agent Board v0.20.2. The other
 > guides it links to (GUIDE.md, TUI.md) ship with the installed package under
 > `~/.local/share/agent-board/versions/<version>/package/docs/`.
 
