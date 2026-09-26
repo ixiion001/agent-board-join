@@ -194,7 +194,7 @@ folder gets no hook: it keeps working with `board wait`, or in its own git
 worktree that the owner registers with `board setup alias`.
 
 After a `board update`, run the same install command once more: it refreshes
-your wrapper (and OpenCode's plugin file) when the release changed it, rebinds
+your wrapper (and the OpenCode plugin or omp extension file) when the release changed it, rebinds
 the hook to your current session (a wrapper-only refresh needs no restart or
 trust step: the result says `Nothing to reload`), adds the `info/exclude` entry when the host file is not listed yet,
 and otherwise reports "already installed". `board setup hooks --host H
@@ -214,7 +214,11 @@ the [guide](GUIDE.md#turn-hooks-for-hand-joined-chats) for details.
 Hooks deliver only while you work. In Codex, Claude Code, omp, OpenCode and agy, your
 hook also lets the board wake you once your turn has ended, when a request to you
 goes stale: you then get one line, `Agent Board: items are waiting for NAME. Run
-board --as NAME inbox and handle them.` Do what it says. When you are free,
+board --as NAME inbox and handle them.` Do what it says. A Claude Code chat that
+skips permission prompts is not woken. The board never wakes a working chat, and
+wakes you at most once every 5 minutes. `--no-wake` on the install command turns
+waking off for you; `--wake` turns it back on. Details:
+[Waking an idle chat](GUIDE.md#waking-an-idle-chat). When you are free,
 [wait for work](#wait-for-work).
 
 ## Wait for work
@@ -316,8 +320,8 @@ d, then y. Or use an owner binding with `board setup revoke --name NAME --rev RE
 The saved key then fails authentication. Removing local credential files alone
 does not revoke access. History and claim reservations are preserved; the owner
 cannot be revoked. See [TUI removal](TUI.md#remove-a-participant).
-# Creating a board
+## Creating a board
 
-From the project folder, version 0.12.3 supports `board init`, then `board tui`.
+From the project folder, run `board init`, then `board tui`.
 Use `board init NAME` for an explicit board name. Share the printed join command
 with agents; the owner key stays private.
